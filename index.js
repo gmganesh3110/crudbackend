@@ -14,7 +14,7 @@ app.use(helmet.crossOriginResourcePolicy({ policy: "cross-origin" }));
 app.use(morgan("common"));
 app.use(bodyParser.json({ limit: "30mb", extended: true }));
 app.use("/", userRoutes);
-const PORT = 6010;
+const PORT = process.env.PORT || 6010;
 Connection();
 app.listen(PORT, () => {
   console.log(`PORT WAS LISTENING ON ${PORT}`);
